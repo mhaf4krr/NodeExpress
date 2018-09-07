@@ -2,6 +2,8 @@ const express = require('express');
 
 const fs = require('fs');
 
+const port = process.env.PORT || 3000;
+
 // require handle bar for injecting dynamic code and reusibility
 const hbs = require('hbs')
 
@@ -59,4 +61,6 @@ app.get('/about' , (req , res) => {
 
 
 // opening  a port for server
-app.listen(3005);
+app.listen(port,() => {
+    console.log(`Listening on ${port}`)
+});
